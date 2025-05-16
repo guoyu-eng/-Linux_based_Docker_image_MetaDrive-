@@ -17,10 +17,55 @@ This project generates procedurally random road maps using [MetaDrive](https://g
 
 ## 📁 Project Structure
 
-sheffield/
-├── map__batch_generation.py # Main script (supports local + docker mode)
-├── requirements # Python dependencies
-├── Dockerfile # Docker image builder
-├── outputs/ # Local volume (auto-generated)
-│ └── output_YYYYMMDD/ # Each run generates a timestamped folder
+- `sheffield/`
+  - `map_batch_generation.py` 🧠 — Main script (local + docker mode)
+  - `requirements.txt` 📦 — Python dependencies
+  - `Dockerfile` 🐳 — Docker image builder
+  - `outputs/`
+    - `output_YYYYMMDD/` 🕓 — Timestamped run folders
+      - `map_1.png` 🖼️ — Top-down map snapshot
+      - `map_1.gif` 🎞️ — Animated preview of maps
+      - `metrics.csv` 📊 — Generation timing data
+
+
+---
+
+## 🧪 Local Usage (Requires MetaDrive installed)
+
+Make sure you have Python 3.8+ and MetaDrive installed:
+
+pip install -r requirements.txt
+
+Then run:
+
+python map_generator.py --start 5 --end 20 --step 5
+
+（--start 5 --end 20 --step 5 can be change by user)
+
+（Please check the map_batch_generation.py line 23 ,if u need run by python not Docker, this file default is can be run by Docker)
+
+---
+
+# 🐳 Docker Usage (No need to install anything locally)
+
+Starting Docker Desktop
+Click on the Windows start menu and search for ‘Docker Desktop’.
+
+Open it and wait for it to say ‘Docker is running’.
+
+The icon should turn into a small whale and there should be no more red or grey forks in the tray.
+
+## Build Docker image
+
+docker build -t metadrive-generator .
+
+## Run with mounted output folder
+
+docker run --rm -v ${PWD}/outputs:/app/outputs metadrive-generator python map_generator.py --start 5 --end 20 --step 5
+
+（--start 5 --end 20 --step 5 can be change by user)
+
+
+
+
 
