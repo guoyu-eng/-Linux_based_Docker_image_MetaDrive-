@@ -1,0 +1,7 @@
+
+git+https://github.com/metadriverse/metadrive.git
+imageio
+matplotlib
+pandas
+
+
