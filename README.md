@@ -11,7 +11,7 @@ This project generates procedurally random road maps using [MetaDrive](https://g
 - Create animated `.gif` showing multiple generated maps
 - Measure generation time for each map and save a `.csv`
 - Plot complexity vs. generation time trend as a `.png`
-- Auto-detects if MetaDrive is missing and switches to Docker
+- Can run by python or Docker
 
 ---
 
@@ -21,14 +21,18 @@ This project generates procedurally random road maps using [MetaDrive](https://g
   - `map_batch_generation.py` 🧠 — Main script (local + docker mode)
   - `requirements.txt` 📦 — Python dependencies
   - `Dockerfile` 🐳 — Docker image builder
+  - 'test_metadrive.py' — Test metadrive whether can be used
+  - `output_YYYYMMDD/` 🕓 — Timestamped run folders(use python to run )
   - `outputs/`
     - `output_YYYYMMDD/` 🕓 — Timestamped run folders
       - `map_1.png` 🖼️ — Top-down map snapshot
-      - `map_1.gif` 🎞️ — Animated preview of maps
+      - `map_sequence.gif` 🎞️ — Animated preview of maps
       - `metrics.csv` 📊 — Generation timing data
 
 
 ---
+
+(map_sequence.gif open in the brower will be better)
 
 ## 🧪 Local Usage (Requires MetaDrive installed)
 
