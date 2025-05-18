@@ -23,8 +23,8 @@ This project generates procedurally random road maps using [MetaDrive](https://g
   - `Dockerfile` 🐳 — Docker image builder
   - 'test_metadrive.py' — Test metadrive whether can be used
   - `output_YYYYMMDD/` 🕓 — Timestamped run folders(use python to run )
-  - `maping.py` extra function( use python)
-  - `outputs_docker_extra` result by maping.py
+  - `basesafe_metadrive.py` extra function( use python)
+  - `outputs_docker_extra` result by basesafe_metadrive.py
     - `Analysis_YYYYMMDD/` 🕓 — Timestamped run folders
       - map_x 
         - `map_stactic_xx.png` 🖼️ — Top-down map snapshot
