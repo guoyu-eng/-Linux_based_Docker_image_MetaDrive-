@@ -38,8 +38,8 @@ COPY requirements /app/requirements
 RUN pip install --no-cache-dir -r requirements
 
 # Default command (can be overridden)
-CMD ["python", "map_batch_generation.py"]
+#CMD ["python", "map_batch_generation.py"]
 
-#CMD ["python", "maping.py"]
+CMD ["python", "basesafe_metadrive.py"]
 
 
