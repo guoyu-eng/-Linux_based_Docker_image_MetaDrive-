@@ -1,6 +1,12 @@
 # MetaDrive Map Generator 🛣️🧠
 
-This project generates procedurally random road maps using [MetaDrive](https://github.com/metadriverse/metadrive), saves visual outputs (images and GIFs), and measures generation performance (execution time vs. map complexity). It is designed to run both locally or inside a Linux-based Docker container.
+
+The project uses [MetaDrive](https://github.com/metadriverse/metadrive) to generate procedural stochastic roadmaps, save visual outputs (images and GIFs), and measure generation performance (execution time vs. map complexity). The project can be run locally or in Linux-based Docker containers.
+
+The main script files are map_batch_generation.py and basesafe_metadrive.py. The latter adds JSON image generation and other functions on the basis of the implementation of the former, which makes it more suitable for map performance testing, safety evaluation of self-driving systems, and visual display of trajectories and other task scenarios compared to the first script.
+
+（Docker default run script : basesafe_metadrive.py )
+
 
 ---
 
@@ -69,6 +75,8 @@ Open it and wait for it to say ‘Docker is running’.
 
 The icon should turn into a small whale and there should be no more red or grey forks in the tray.
 
+Ensure that line 43 is commented out in the Dockerfile and that line 41 is available
+
 ## Build Docker image
 
 docker build -t metadrive-generator .
@@ -78,6 +86,32 @@ docker build -t metadrive-generator .
 docker run --rm -v ${PWD}/outputs:/app/outputs metadrive-generator python map_generator.py --start 5 --end 20 --step 5
 
 （--start 5 --end 20 --step 5 can be change by user)
+
+# EXTRA
+
+The basesafe_metadrive.py file is the main runtime file. The results of python runs are stored in the file, and the results of docker runs are stored in the docker--result folder in this folder.
+
+## Run with Python
+
+Ensure that line 29 - line 30  are available and line 32 - line 34are commented out in the basesafe_metadrive.py file.
+
+Run :
+
+`python basesafe_metadrive.py` 
+
+
+
+## Run with Docker
+
+Ensure that line 41 is commented out in the Dockerfile and that line 43 is available
+Ensure that line 32 - line 34 are available and line 29 - line 30 are commented out in the basesafe_metadrive.py file.
+
+Run by :
+
+`docker build -t metadrive-generator .  `
+`docker run --rm -v ${PWD}/outputs_docker_extra:/app/outputs_docker_extra metadrive-generator python basesafe_metadrive.py --start 5 --end 20 --step 5 ` 
+
+
 
 
 
