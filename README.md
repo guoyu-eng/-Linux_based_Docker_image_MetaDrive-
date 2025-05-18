@@ -109,6 +109,7 @@ Ensure that line 32 - line 34 are available and line 29 - line 30 are commented 
 Run by :
 
 `docker build -t metadrive-generator .  `
+
 `docker run --rm -v ${PWD}/outputs_docker_extra:/app/outputs_docker_extra metadrive-generator python basesafe_metadrive.py --start 5 --end 20 --step 5 ` 
 
 
