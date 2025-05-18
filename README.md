@@ -25,6 +25,12 @@ This project generates procedurally random road maps using [MetaDrive](https://g
   - `output_YYYYMMDD/` 🕓 — Timestamped run folders(use python to run )
   - `maping.py` extra function( use python)
   - `outputs_docker_extra` result by maping.py
+    - `Analysis_YYYYMMDD/` 🕓 — Timestamped run folders
+      - map_x 
+        - `map_1.png` 🖼️ — Top-down map snapshot
+        - `map_sequence.gif` 🎞️ — Animated preview of maps
+        - `metrics.csv` 📊 — Generation timing data
+
   - `outputs/`
     - `output_YYYYMMDD/` 🕓 — Timestamped run folders
       - `map_1.png` 🖼️ — Top-down map snapshot
